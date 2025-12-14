@@ -2,9 +2,8 @@
 
 namespace Fishing.Core.Database;
 
-public interface IUnitOfWork
+public interface IUnitOfWorkBase : IDisposable
 {
     Task<DbTransaction> BeginTransaction(CancellationToken cancellationToken = default);
-
     Task SaveChanges(CancellationToken cancellationToken = default);
 }
