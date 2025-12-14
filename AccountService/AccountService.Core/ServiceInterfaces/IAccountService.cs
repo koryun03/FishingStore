@@ -2,5 +2,5 @@
 
 public interface IAccountService
 {
-
+    Task<int> RegisterAsync();
 }

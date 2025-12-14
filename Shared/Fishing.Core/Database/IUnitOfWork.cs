@@ -1,5 +1,10 @@
-﻿namespace Fishing.Core.Database;
+﻿using System.Data.Common;
+
+namespace Fishing.Core.Database;
 
 public interface IUnitOfWork
 {
+    Task<DbTransaction> BeginTransaction(CancellationToken cancellationToken = default);
+
+    Task SaveChanges(CancellationToken cancellationToken = default);
 }

@@ -14,4 +14,9 @@
     <PackageReference Include="NSwag.AspNetCore" Version="14.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AccountService.Core\AccountService.Core.csproj" />
+    <ProjectReference Include="..\AccountService.Infrastructure\AccountService.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
