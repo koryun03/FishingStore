@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fishing.Core" Version="1.1.9" />
+    <PackageReference Include="Fishing.Core" Version="1.2.0" />
     <PackageReference Include="MassTransit" Version="8.5.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.11" />
   </ItemGroup>
 
 </Project>

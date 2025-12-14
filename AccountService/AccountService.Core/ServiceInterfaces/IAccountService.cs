@@ -1,6 +1,8 @@
-﻿namespace AccountService.Core.ServiceInterfaces;
+﻿using AccountService.Core.Dtos;
+
+namespace AccountService.Core.ServiceInterfaces;
 
 public interface IAccountService
 {
-    Task<int> RegisterAsync();
+    Task<Guid> RegisterAsync(RegisterDto dto, CancellationToken cancellationToken = default);
 }
