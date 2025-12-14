@@ -1,9 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	
+		<PackageId>Core</PackageId>
+		<Version>1.1.9</Version>
+		<Authors>koryun03</Authors>
+		<Company>FishingStore</Company>
+		<PackageDescription>Core project</PackageDescription>
+		<RepositoryUrl>https://github.com/koryun03/FishingStore</RepositoryUrl>
+	</PropertyGroup>
 
 </Project>
