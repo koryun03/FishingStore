@@ -16,14 +16,17 @@ public class AccountsDbContext : IdentityDbContext<User, Role, Guid>
     }
 
     public IQueryable<User> ReadUsers => Set<User>().AsQueryable().AsNoTracking();
-
     public IQueryable<Role> ReadRoles => Set<Role>().AsQueryable().AsNoTracking();
-
-    public bool SoftDelete { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        //builder.ApplyConfiguration(new DesignOptionRefConfiguration());
+
+        if (options.SoftDelete)
+        {
+            builder.ApplySoftDeleteQueryFilter();
+        }
     }
 
     //public async Task<IDbContextTransaction> BeginTransactionAsync()
