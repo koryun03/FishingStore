@@ -2,7 +2,7 @@
 
 namespace AccountService.Core.ServiceInterfaces;
 
-public interface IAccountService
+public interface IUserService
 {
     Task<Guid> RegisterAsync(RegisterDto dto, CancellationToken cancellationToken = default);
 }

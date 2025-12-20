@@ -1,3 +1,6 @@
+using AccountService.Core;
+using AccountService.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,6 +13,9 @@ builder.Services.AddOpenApiDocument(options =>
     options.Title = "AccountService API";
     options.Version = "v1";
 });
+
+builder.Services.AddCoreServices();
+builder.Services.AddInfrastructureServices();
 
 var app = builder.Build();
 

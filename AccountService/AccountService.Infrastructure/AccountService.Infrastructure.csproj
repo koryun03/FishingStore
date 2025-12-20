@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="EntityConfigurations\" />
     <Folder Include="Options\" />
   </ItemGroup>
 
