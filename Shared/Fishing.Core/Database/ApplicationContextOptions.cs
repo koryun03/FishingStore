@@ -1,6 +1,6 @@
 ﻿namespace Fishing.Core.Database;
 
-public interface IApplicationContextOptions
+public class ApplicationContextOptions
 {
     public bool SoftDelete { get; set; }
 }
