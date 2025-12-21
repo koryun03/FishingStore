@@ -4,4 +4,5 @@ namespace AccountService.Infrastructure.Repositories;
 
 public class UserRepository(AccountsDbContext context) : IUserRepository
 {
+
 }

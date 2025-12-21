@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 	
 		<PackageId>Fishing.Core</PackageId>
-		<Version>1.2.4</Version>
+		<Version>1.2.5</Version>
 		<Authors>koryun03</Authors>
 		<RepositoryUrl>https://github.com/koryun03/FishingStore</RepositoryUrl>
 	</PropertyGroup>
