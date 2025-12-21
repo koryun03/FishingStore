@@ -23,8 +23,11 @@ public class UserService(UserManager<User> userManager, IUnitOfWork unitOfWork, 
         var utcNow = DateTime.UtcNow;
 
         //user.PasswordHash = userManager.PasswordHasher.HashPassword(user, dto.Password);
-        user.UserProfile.CreatedDate = utcNow;
-        user.UserProfile.UpdatedDate = utcNow;
+
+
+        //pti vor petq chli es (applicationcontexty takic anuma)
+        //user.UserProfile.CreatedDate = utcNow;
+        //user.UserProfile.UpdatedDate = utcNow;
 
         await userManager.CreateAsync(user, dto.Password);
         //await userManager.CreateAsync(user);

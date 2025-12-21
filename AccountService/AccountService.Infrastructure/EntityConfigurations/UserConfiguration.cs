@@ -19,7 +19,7 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(p => p.LastName)
             .HasMaxLength(64)
             .IsUnicode(true);
-        builder.Property(p => p.HasBraintreeAccount)
+        builder.Property(p => p.HasPayPalAccount)
             .HasDefaultValue(false);
 
         builder.HasIndex(k => k.IsBlocked)

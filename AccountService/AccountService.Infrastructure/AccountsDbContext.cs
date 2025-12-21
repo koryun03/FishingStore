@@ -18,6 +18,9 @@ public class AccountsDbContext : IdentityDbContext<User, Role, Guid>
 
     public IQueryable<User> ReadUsers => Set<User>().AsQueryable().AsNoTracking();
     public IQueryable<Role> ReadRoles => Set<Role>().AsQueryable().AsNoTracking();
+    public DbSet<GuestUser> GuestUsers { get; set; }
+    public DbSet<UserDevice> UserDevices { get; set; }
+    public DbSet<UserProfile> UserProfiles { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

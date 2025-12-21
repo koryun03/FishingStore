@@ -15,7 +15,7 @@ builder.Services.AddOpenApiDocument(options =>
 });
 
 builder.Services.AddCoreServices();
-builder.Services.AddInfrastructureServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 
