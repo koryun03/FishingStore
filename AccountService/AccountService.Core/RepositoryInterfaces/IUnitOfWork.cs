@@ -1,8 +1,6 @@
-﻿using Fishing.Core.Database;
+﻿namespace AccountService.Core.RepositoryInterfaces;
 
-namespace AccountService.Core.RepositoryInterfaces;
-
-public interface IUnitOfWork : IUnitOfWorkBase
+public interface IUnitOfWork : IDisposable
 {
     IUserRepository UserRepository { get; }
 }

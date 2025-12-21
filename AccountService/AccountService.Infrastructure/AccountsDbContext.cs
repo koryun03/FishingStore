@@ -1,4 +1,5 @@
 ﻿using AccountService.Core.Entities;
+using AccountService.Infrastructure.EntityConfigurations;
 using Fishing.Core.Database;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ public class AccountsDbContext : IdentityDbContext<User, Role, Guid>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        //builder.ApplyConfiguration(new DesignOptionRefConfiguration());
+        builder.ApplyConfiguration(new UserConfiguration());
 
         if (options.SoftDelete)
         {
@@ -38,4 +39,24 @@ public class AccountsDbContext : IdentityDbContext<User, Role, Guid>
     //    return _currentTransaction;
     //}
 
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        var utcNow = DateTime.UtcNow;
+
+        foreach (var entry in ChangeTracker.Entries<IAuditableEntity>())
+        {
+            switch (entry.State)
+            {
+                case EntityState.Added:
+                    entry.Entity.CreatedDate = utcNow;
+                    entry.Entity.UpdatedDate = utcNow;
+                    break;
+                case EntityState.Modified:
+                    entry.Entity.UpdatedDate = utcNow;
+                    break;
+            }
+        }
+
+        return await base.SaveChangesAsync(cancellationToken);
+    }
 }
